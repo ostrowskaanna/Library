@@ -21,8 +21,6 @@ namespace LibraryProject.DataModels
         [Required]
         public string Password { get; set; }
 
-        [Required]
-        public string Confirm { get; set; }
         
         [Required]
         public int RoleId { get; set; }

@@ -56,8 +56,7 @@ namespace LibraryProject.Logics
             {
                 query = "SELECT * FROM Books WHERE Quantity > 0";
                 this.dataGridView1.Columns[4].Visible = true;
-                this.dataGridView1.DefaultCellStyle.SelectionBackColor = this.dataGridView1.DefaultCellStyle.ForeColor;
-                this.dataGridView1.DefaultCellStyle.SelectionForeColor = this.dataGridView1.DefaultCellStyle.BackColor;
+                this.dataGridView1.Enabled = true;
                 this.infoLabel.Text = "If you want to borrow a book select it and click the button: ";
                 this.confirmButton.Visible = true;
                 this.buttonAction = "borrow";
@@ -68,8 +67,7 @@ namespace LibraryProject.Logics
             {
                 query = "SELECT Id, Title, Author, Description FROM Books";
                 this.dataGridView1.Columns[4].Visible = false;
-                this.dataGridView1.DefaultCellStyle.SelectionBackColor = this.dataGridView1.DefaultCellStyle.BackColor;
-                this.dataGridView1.DefaultCellStyle.SelectionForeColor = this.dataGridView1.DefaultCellStyle.ForeColor;
+                this.dataGridView1.Enabled = false;
                 this.infoLabel.Text = string.Empty;
                 this.confirmButton.Visible = false;
             }
@@ -78,9 +76,8 @@ namespace LibraryProject.Logics
             {
                 query = "SELECT Id, Title, Author, Description FROM Books";
                 this.dataGridView1.Columns[4].Visible = false;
-                this.dataGridView1.DefaultCellStyle.SelectionBackColor = this.dataGridView1.DefaultCellStyle.ForeColor;
-                this.dataGridView1.DefaultCellStyle.SelectionForeColor = this.dataGridView1.DefaultCellStyle.BackColor;
-                this.infoLabel.Text = "If you want to remove a book select it and click the button: ";
+                this.dataGridView1.Enabled = true;
+                this.infoLabel.Text = "Sleect book to remove and click the button: ";
                 this.confirmButton.Visible = true;
                 this.buttonAction = "remove";
             }
@@ -89,9 +86,8 @@ namespace LibraryProject.Logics
             {
                 query = "SELECT DISTINCT b.Id, Title, Author, Description FROM Books b INNER JOIN UserBooks ub ON b.Id = ub.BookId WHERE ub.UserId = " + id;
                 this.dataGridView1.Columns[4].Visible = false;
-                this.dataGridView1.DefaultCellStyle.SelectionBackColor = this.dataGridView1.DefaultCellStyle.ForeColor;
-                this.dataGridView1.DefaultCellStyle.SelectionForeColor = this.dataGridView1.DefaultCellStyle.BackColor;
-                this.infoLabel.Text = "If you want to return a book select it and click the button: ";
+                this.dataGridView1.Enabled = true;
+                this.infoLabel.Text = "Select book to return and click the button: ";
                 this.confirmButton.Visible = true;
                 this.buttonAction = "return";
             }
@@ -102,13 +98,18 @@ namespace LibraryProject.Logics
             table.Load(reader);
             this.dataGridView1.DataSource = table;
             this.dataGridView1.Rows[0].Selected = false;
+            this.confirmButton.Enabled = false;
             con.Close();
         }
 
 
         public void cellClick(DataGridViewCellEventArgs e)
         {
-            this.bookId = (int)this.dataGridView1.SelectedCells[0].Value;
+            if(this.dataGridView1.SelectedCells[0] != null)
+            {
+                this.bookId = (int)this.dataGridView1.SelectedCells[0].Value;
+                this.confirmButton.Enabled = true;
+            }
         }
 
         public void confirmBook()

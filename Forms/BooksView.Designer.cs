@@ -61,7 +61,7 @@
             // 
             // confirmButton
             // 
-            this.confirmButton.Location = new System.Drawing.Point(426, 70);
+            this.confirmButton.Location = new System.Drawing.Point(510, 72);
             this.confirmButton.Name = "confirmButton";
             this.confirmButton.Size = new System.Drawing.Size(92, 30);
             this.confirmButton.TabIndex = 1;
@@ -72,7 +72,7 @@
             // infoLabel
             // 
             this.infoLabel.AutoSize = true;
-            this.infoLabel.Location = new System.Drawing.Point(17, 77);
+            this.infoLabel.Location = new System.Drawing.Point(101, 79);
             this.infoLabel.Name = "infoLabel";
             this.infoLabel.Size = new System.Drawing.Size(44, 16);
             this.infoLabel.TabIndex = 2;

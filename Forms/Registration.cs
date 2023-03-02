@@ -35,13 +35,11 @@ namespace LibraryProject
 
         private void signUp(object sender, EventArgs e)
         {
-            if (logic.checkIfDataIsCorrect() && logic.checkPassword() && logic.checkIfExists())
+            if (logic.checkIfDataIsCorrect() && logic.checkPassword() && !logic.checkIfExists())
             {
                 logic.addToDB();
                 logic.openHomeForm();
             }
-            else
-                MessageBox.Show("wrong data!");
         }
 
         private void checkIfSignInEnabled(object sender, EventArgs e)

@@ -23,3 +23,6 @@ C:\Users\borowska.a\source\repos\LibraryProject\obj\Debug\LibraryProject.Forms.W
 C:\Users\borowska.a\source\repos\LibraryProject\obj\Debug\LibraryProject.Forms.BooksView.resources
 C:\Users\borowska.a\source\repos\LibraryProject\obj\Debug\LibraryProject.Migrations.UserBooksUpdate.resources
 C:\Users\borowska.a\source\repos\LibraryProject\obj\Debug\LibraryProject.Forms.NewBookForm.resources
+C:\Users\borowska.a\source\repos\LibraryProject\obj\Debug\LibraryProject.Forms.UsersView.resources
+C:\Users\borowska.a\source\repos\LibraryProject\obj\Debug\LibraryProject.Forms.NewUserForm.resources
+C:\Users\borowska.a\source\repos\LibraryProject\obj\Debug\LibraryProject.Migrations.UsersTableUpdate.resources

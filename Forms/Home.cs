@@ -23,10 +23,12 @@ namespace LibraryProject.Forms
         Welcome welcome = new Welcome();
         BooksView booksView = new BooksView();
         NewBookForm newBookForm = new NewBookForm();
+        UsersView usersView = new UsersView();
+        NewUserForm newUserForm = new NewUserForm();
 
-        string username;
-        int id;
-        Role role;
+        string username; //username of logged in user
+        int id; //id of logged in user
+        Role role; //role of logged in user 
         public Home()
         {
             InitializeComponent();
@@ -62,6 +64,12 @@ namespace LibraryProject.Forms
 
             this.Controls.Add(this.newBookForm);
             this.customControls.Add(this.newBookForm);
+
+            this.Controls.Add(this.usersView);
+            this.customControls.Add(this.usersView);
+
+            this.Controls.Add(this.newUserForm);
+            this.customControls.Add(this.newUserForm);
         }
           
         public void checkPermissons()
@@ -131,17 +139,22 @@ namespace LibraryProject.Forms
 
         private void seeAllUsers(object sender, EventArgs e)
         {
-
+            this.hideAllCustomControls();
+            usersView.loadData(false);
+            this.usersView.Visible = true;
         }
 
         private void addNewUser(object sender, EventArgs e)
         {
-
+            this.hideAllCustomControls();
+            this.newUserForm.Visible = true;
         }
 
         private void removeUser(object sender, EventArgs e)
         {
-
+            this.hideAllCustomControls();
+            usersView.loadData(true);
+            this.usersView.Visible = true;
         }
 
         private void seeAllRoles(object sender, EventArgs e)

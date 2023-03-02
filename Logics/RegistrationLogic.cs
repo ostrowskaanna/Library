@@ -35,9 +35,11 @@ namespace LibraryProject.Logics
 
         internal bool checkIfDataIsCorrect()
         {
-            if (usernameTextBox.Text.Length > 0 && emailTextBox.Text.Contains('@') && emailTextBox.Text.Length > 2)
+            if (!string.IsNullOrWhiteSpace(usernameTextBox.Text) && emailTextBox.Text.Contains('@'))
                 return true;
+            MessageBox.Show("given data incorrect");
             return false;
+
 
         }
 
@@ -47,6 +49,7 @@ namespace LibraryProject.Logics
             {
                 return true;
             }
+            MessageBox.Show("passwords don't match");
             return false;
         }
 
@@ -75,7 +78,6 @@ namespace LibraryProject.Logics
                     Username = usernameTextBox.Text,
                     Email = emailTextBox.Text,
                     Password = passwordTextBox.Text,
-                    Confirm = confirmTextBox.Text,
                     RoleId = 2
                 });
                 db.SaveChanges();
@@ -87,12 +89,13 @@ namespace LibraryProject.Logics
         {
             using(var db = new LibraryContext())
             {
-                if (db.Users.Any(u => u.Username == usernameTextBox.Text))
+                if (db.Users.Any(u => (u.Username == usernameTextBox.Text) || (u.Email == emailTextBox.Text)))
+                {
+                    MessageBox.Show("user with given credits already exists");
                     return true;
-                else if (db.Users.Any(u => u.Email == emailTextBox.Text))
-                    return true;
-                return false;
+                }
             }
+            return false;
         }
 
         internal bool checkIfLoginDataCorrect()

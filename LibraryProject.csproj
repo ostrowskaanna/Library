@@ -91,11 +91,23 @@
     <Compile Include="Forms\NewBookForm.Designer.cs">
       <DependentUpon>NewBookForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\NewUserForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\NewUserForm.Designer.cs">
+      <DependentUpon>NewUserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Registration.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UsersView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UsersView.Designer.cs">
+      <DependentUpon>UsersView.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Welcome.cs">
       <SubType>UserControl</SubType>
@@ -116,7 +128,9 @@
     <Compile Include="Logics\DetailsLogic.cs" />
     <Compile Include="Logics\HomeLogic.cs" />
     <Compile Include="Logics\NewBookFormLogic.cs" />
+    <Compile Include="Logics\NewUserFormLogic.cs" />
     <Compile Include="Logics\RegistrationLogic.cs" />
+    <Compile Include="Logics\UsersViewLogic.cs" />
     <Compile Include="Migrations\202302131022336_InitialCreate.cs" />
     <Compile Include="Migrations\202302131022336_InitialCreate.designer.cs">
       <DependentUpon>202302131022336_InitialCreate.cs</DependentUpon>
@@ -128,6 +142,10 @@
     <Compile Include="Migrations\202302160811569_UserBooksUpdate.cs" />
     <Compile Include="Migrations\202302160811569_UserBooksUpdate.designer.cs">
       <DependentUpon>202302160811569_UserBooksUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303021219295_UsersTableUpdate.cs" />
+    <Compile Include="Migrations\202303021219295_UsersTableUpdate.designer.cs">
+      <DependentUpon>202303021219295_UsersTableUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -147,8 +165,14 @@
     <EmbeddedResource Include="Forms\NewBookForm.resx">
       <DependentUpon>NewBookForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewUserForm.resx">
+      <DependentUpon>NewUserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UsersView.resx">
+      <DependentUpon>UsersView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>
@@ -161,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302160811569_UserBooksUpdate.resx">
       <DependentUpon>202302160811569_UserBooksUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303021219295_UsersTableUpdate.resx">
+      <DependentUpon>202303021219295_UsersTableUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
